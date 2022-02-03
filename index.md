@@ -8,14 +8,14 @@ Functions are documented in this format:
 * type arg - type is the expected datatype of the argument and arg is a name
 * [type optional_arg] - Square brackets mean that you are not required to pass in a value 
 
-# Enviroment Functions
+# Environment Functions
 
 
-### Get Global Enviroment
+### Get Global Environment
 
 `<table> getgenv()`
 
-Returns the enviroment that will be applied each script by Comet. Can be used to create global functions or values in Comet.
+Returns the environment that will be applied each script by Comet. Can be used to create global functions or values in Comet.
 
 #### Example
 ```lua
@@ -26,11 +26,11 @@ getgenv().message = print
 message("Hello World!")
 ```
 
-### Get Roblox Enviroment
+### Get Roblox Environment
 
 `<table> getrenv()`
 
-Returns the global enviroment for the LocalScript state.
+Returns the global environment for the LocalScript state.
 
 ### Get Registry
 
@@ -131,7 +131,7 @@ Sets the player's SimulationRadius.
 # Script Functions
 
 
-### Get Script Enviroment
+### Get Script Environment
 
 `<table> getsenv(union<LocalScript, ModuleScript> Script)`
 
