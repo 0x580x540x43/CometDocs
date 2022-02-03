@@ -1,6 +1,6 @@
 # Comet Documentation
 
-## Credits
+### Credits
 
 Written by 0x580x540x43#3331
 
