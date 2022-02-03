@@ -1,22 +1,5 @@
 # Comet Documentation
 
-### Credits
-
-Written by 0x580x540x43#3331
-
-Inspiration and most content from Synapse documentation, functions that are not in Comet have been excluded.
-
-Credits to noobmaster.
-
-Credits to Greenman#8153 for the functions format.
-
-
-[Official Comet website](https://cometrbx.xyz/)
-
-[Comet credits](https://cometrbx.xyz/credits.html)
-
-## Format
-
 Functions are documented in this format:
 > ```<return_type> function_name(<type> arg, <type> arg2, [<type> optional_arg])```
 
