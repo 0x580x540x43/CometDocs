@@ -2,9 +2,9 @@
 
 Written by 0x580x540x43#3331
 
-Inspiration and most content from Synapse documentation, excuded functions that are not in Comet
+Inspiration and most content from Synapse documentation, functions that are not in Comet have been excluded.
 
-Credits to Greenman#8153 for the functions format
+Credits to Greenman#8153 for the functions format.
 
 https://cometrbx.xyz/
 
@@ -299,3 +299,4 @@ rconsoleprint('this is red')
 ```
 
 #### Colors
+
