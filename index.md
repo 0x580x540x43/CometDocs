@@ -174,3 +174,22 @@ Sets `t's` read-only value to `val`.
 `<bool> isreadonly(<table> t)`
 
 Returns `t's` read-only condition.
+
+# Input Functions
+
+
+### Is Active
+
+`<bool> iswindowactive(<void>)`
+
+Returns if the main window is in focus. This must return true for any other mouse/keyboard function to work.
+
+### Keyboard
+
+`<void> keypress(<uint> keycode)`
+
+Simulates a key press for the specified keycode. Keycodes are listed [here](https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes).
+
+`<void> keyrelease(<uint> key)`
+
+Releases key on the keyboard. You can access the key values from the link above.
