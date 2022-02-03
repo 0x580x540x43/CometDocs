@@ -1,37 +1,81 @@
-## Welcome to GitHub Pages
+# Comet Documentation
 
-You can use the [editor on GitHub](https://github.com/0x580x540x43/CometDocs/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+[Comet](https://cometrbx/)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Written by 0x580x540x43#3331
 
-### Markdown
+Functions are documented in this format:
+`return_type function_name(type arg, type arg2, [type optional_arg])`
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+* return_type - The Lua datatype of the returned value
+* function_name - The name of the function
+* type arg - type is the expected datatype of the argument and arg is a name
+* [type optional_arg] - Square brackets mean that you are not required to pass in a value 
 
-```markdown
-Syntax highlighted code block
+Format stolen from Greenman#8153
 
-# Header 1
-## Header 2
-### Header 3
+# Enviroment Functions
 
-- Bulleted
-- List
+### Get Global Enviroment
 
-1. Numbered
-2. List
+`table getgenv()`
 
-**Bold** and _Italic_ and `Code` text
+Returns the enviroment that will be applied each script by Comet. Can be used to create global functions or values in Comet.
 
-[Link](url) and ![Image](src)
+Example:
+```lua
+getgenv().message = print
+```
+```lua
+--another script
+message("Hello World!")
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+### Get Roblox Enviroment
 
-### Jekyll Themes
+`table getrenv()`
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/0x580x540x43/CometDocs/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Returns the global enviroment for the LocalScript state.
 
-### Support or Contact
+### Get Registry
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+`table getreg()`
+
+Returns the Lua registry.
+
+### Get Garbage Collection
+
+`table getgc([bool include_tables])`
+
+Returns all the functions and userdata values in the garbage collector. Passing true will also return tables.
+
+### Get Instances
+
+`table<Instance> getinstances`
+
+Returns a table of all the Instances in the current game.
+
+### Get Nil Instances
+
+`table<Instance> getnilinstances`
+
+Returns a table of all the instances parented to **nil** in the current game.
+
+### Get Loaded Modules
+
+`table<ModuleScript> getloadedmodules()`
+
+Returns all the loaded ModuleScripts in the current game.
+
+### Get Connections
+
+`table<Connection> getconnections(ScriptSignal object)`
+
+Gets a list of connections to the specified signal. You can do the following operations on a Connection:
+| Example      | Description                              | 
+| ------------ | ---------------------------------------- |
+| .Function	   | The function connected to the connection |
+| .State	   | The state of the connection |
+| :Enable	   | Enables the connection |
+| :Disable	   | Disables the connection |
+| :Fire 	   | Fires the connection |
