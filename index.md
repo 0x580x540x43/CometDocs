@@ -503,3 +503,17 @@ end)
 `<bool> COMET_LOADED(<void>)`
 
 Returns a bool indicating whether or not Comet is loaded.
+
+# Credits
+
+Documentation written by 0x580x540x43#3331
+
+Inspiration and most content from Synapse documentation, functions that are not in Comet have been excluded.
+
+Credits to noobmaster.
+
+Credits to Greenman#8153 for the functions format.
+
+[Official Comet website](https://cometrbx.xyz/)
+
+[Comet credits](https://cometrbx.xyz/credits.html)
