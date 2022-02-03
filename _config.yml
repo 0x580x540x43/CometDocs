@@ -1,3 +1,4 @@
 theme: jekyll-theme-modernist
 name: Comet Docs
+markdown: GFM
 description: Documentation for the Roblox exploit Comet
