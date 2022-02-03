@@ -188,10 +188,10 @@ Returns if the main window is in focus. This must return true for any other mous
 
 ### Keyboard
 
-`<void> keypress(<uint> keycode)`
+```<void> keypress(<uint> keycode)```
 
 Simulates a key press for the specified keycode. Keycodes are listed [here](https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes).
 
-`<void> keyrelease(<uint> key)`
+```<void> keyrelease(<uint> key)```
 
 Releases key on the keyboard. You can access the key values from the link above.
