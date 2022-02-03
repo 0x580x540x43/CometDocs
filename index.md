@@ -3,6 +3,7 @@
 Written by 0x580x540x43#3331
 
 Inspiration and most content from Synapse documentation, excuded functions that are not in Comet
+
 Credits to Greenman#8153 for the functions format
 
 https://cometrbx.xyz/
