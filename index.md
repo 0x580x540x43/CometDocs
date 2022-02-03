@@ -25,7 +25,7 @@ Functions are documented in this format:
 
 Returns the enviroment that will be applied each script by Comet. Can be used to create global functions or values in Comet.
 
-Example:
+#### Example
 ```lua
 getgenv().message = print
 ```
@@ -84,7 +84,8 @@ Gets a list of connections to the specified signal. You can do the following ope
 | :Disable	   | Disables the connection |
 | :Fire 	   | Fires the connection |
 
-Example: 
+#### Example
+
 ```lua
 for i, connection in pairs(getconnections(workspace.ChildAdded)) do
     connection:Disable()
@@ -186,12 +187,115 @@ Returns `t's` read-only condition.
 
 Returns if the main window is in focus. This must return true for any other mouse/keyboard function to work.
 
-### Keyboard
+### Keyboard Functions
 
-```<void> keypress(<uint> keycode)```
+`<void> keypress(<uint> keycode)`
 
 Simulates a key press for the specified keycode. Keycodes are listed [here](https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes).
 
-```<void> keyrelease(<uint> key)```
+`<void> keyrelease(<uint> key)`
 
 Releases key on the keyboard. You can access the key values from the link above.
+
+### Left Mouse Functions
+
+`<void> mouse1click(<void>)`
+
+Simulates a full left mouse button press.
+
+`<void> mouse1press(<void>)`
+
+Simulates a left mouse button press without releasing it.
+
+`<void> mouse1release(<void>)`
+
+Simulates a left mouse button release.
+
+### Right Mouse Functions
+
+`<void> mouse2click(<void>)`
+
+Simulates a full right mouse button press.
+
+`<void> mouse2press(<void>)`
+
+Simulates a right mouse button press without releasing it.
+
+`<void> mouse2release(<void>)`
+
+Simulates a right mouse button release.
+
+### Mouse Movement Functions
+
+`<void> mousescroll(<number> px)`
+
+Scrolls the mouse wheel virtually by px pixels.
+
+`<void> mousemoverel(<number> x, <number> y)`
+
+Moves the mouse cursor relatively to the current mouse position by coordinates x and y.
+
+`<void> mousemoveabs(<number> x, <number> y)`
+
+Move's your mouse to the x and y coordinates in pixels from topleft of the main window.
+
+# Hooking Functions
+
+
+### Hook Function
+
+`<function> hookfunction(<function> old, <function> hook)`
+
+Hooks function `old`, replacing it with the function `hook`. The old function is returned, you *must* use this function in order to call the original function.
+
+### Hook Metamethod
+
+`<function> hookmetamethod(<Object> object, <string> metamethod, <function> hook)`
+
+Hooks the `metamethod` passed in the `object`'s metatable with `hook`. A function to call the original metamethod is returned, you *must* use this function in order to call the original metamethod.
+
+This function will error if an object without a metatable is passed or a invalid metamethod is passed.
+
+### New C Closure
+
+`<function> newcclosure(<function> f)`
+
+Pushes a new CClosure that invokes function `f` upon call.
+
+# Reflection Functions
+
+### Loadstring
+
+`<union<function, nil>, <string?>> loadstring(<string> chunk, [<string> chunk_name])`
+
+Loads chunk as a Lua function with optional `chunk_name` and returns it if compilation is successful. Otherwise, if an error has occurred during compilation, `nil` followed by the error message will be returned.
+
+### Check Caller
+
+`<bool> checkcaller(<void>)`
+
+Returns `true` if the current thread is a Synapse thread. **Note:** Checkcaller does NOT check the call stack of the function, if you call a game function then it calls out to checkcaller, the result will be `true`! Be careful.
+
+### Is Lua Closure
+
+`<bool> islclosure(<function> f)`
+
+Returns true if `f` is an LClosure.
+
+# Console Functions
+
+
+### Console Print
+
+`<void> rconsoleprint(<string> message)`
+
+Prints `message` into the console. `rconsoleprint` also supports colors.
+
+#### Example
+
+```lua
+rconsoleprint('@@RED@@')
+rconsoleprint('this is red')
+```
+
+#### Colors
