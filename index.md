@@ -1,5 +1,7 @@
 # Comet Documentation
 
+## Format
+
 Functions are documented in this format:
 > ```<return_type> function_name(<type> arg, <type> arg2, [<type> optional_arg])```
 
@@ -8,14 +10,14 @@ Functions are documented in this format:
 * type arg - type is the expected datatype of the argument and arg is a name
 * [type optional_arg] - Square brackets mean that you are not required to pass in a value 
 
-# Environment Functions
+# Enviroment Functions
 
 
-### Get Global Environment
+### Get Global Enviroment
 
 `<table> getgenv()`
 
-Returns the environment that will be applied each script by Comet. Can be used to create global functions or values in Comet.
+Returns the enviroment that will be applied each script by Comet. Can be used to create global functions or values in Comet.
 
 #### Example
 ```lua
@@ -26,11 +28,11 @@ getgenv().message = print
 message("Hello World!")
 ```
 
-### Get Roblox Environment
+### Get Roblox Enviroment
 
 `<table> getrenv()`
 
-Returns the global environment for the LocalScript state.
+Returns the global enviroment for the LocalScript state.
 
 ### Get Registry
 
@@ -131,7 +133,7 @@ Sets the player's SimulationRadius.
 # Script Functions
 
 
-### Get Script Environment
+### Get Script Enviroment
 
 `<table> getsenv(union<LocalScript, ModuleScript> Script)`
 
@@ -504,15 +506,16 @@ end)
 
 Returns a bool indicating whether or not Comet is loaded.
 
-# Credits
+## Credits
 
-Documentation written by 0x580x540x43#3331
+Written by 0x580x540x43#3331
 
 Inspiration and most content from Synapse documentation, functions that are not in Comet have been excluded.
 
 Credits to noobmaster.
 
 Credits to Greenman#8153 for the functions format.
+
 
 [Official Comet website](https://cometrbx.xyz/)
 
