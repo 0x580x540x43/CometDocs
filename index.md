@@ -9,9 +9,9 @@ Credits to noobmaster.
 Credits to Greenman#8153 for the functions format.
 
 
-[Official Comet Website](https://cometrbx.xyz/)
+[Official Comet website](https://cometrbx.xyz/)
 
-[Comet Credits](https://cometrbx.xyz/credits.html)
+[Comet credits](https://cometrbx.xyz/credits.html)
 
 Functions are documented in this format:
 > ```<return_type> function_name(<type> arg, <type> arg2, [<type> optional_arg])```
