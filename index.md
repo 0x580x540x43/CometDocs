@@ -4,9 +4,14 @@ Written by 0x580x540x43#3331
 
 Inspiration and most content from Synapse documentation, functions that are not in Comet have been excluded.
 
+Credits to noobmaster.
+
 Credits to Greenman#8153 for the functions format.
 
-https://cometrbx.xyz/
+
+[Official Comet Website](https://cometrbx.xyz/)
+
+[Comet Credits](https://cometrbx.xyz/credits.html)
 
 Functions are documented in this format:
 > ```<return_type> function_name(<type> arg, <type> arg2, [<type> optional_arg])```
@@ -483,3 +488,31 @@ Creates a message box with parameters text, caption and style.
 | 7    | The No button was selected.        |
 | 10   | The Try Again button was selected. |
 | 11   | The Continue button was selected.  |
+
+### Set Thread Identity
+
+`<void> set_thread_identity(<uint> n)`
+
+Sets the current thread identity.
+
+### Queue On Teleport
+
+`<void> queueonteleport(<string> code)`
+
+Executes `code` after player is teleported.
+
+#### Example
+
+```lua
+game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
+    if State == Enum.TeleportState.Started then
+        queueonteleport("<script to execute after TP>")
+    end
+end)
+```
+
+### Comet Loaded
+
+`<bool> COMET_LOADED(<void>)`
+
+Returns a bool indicating whether or not Comet is loaded.
