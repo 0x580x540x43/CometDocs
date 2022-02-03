@@ -318,4 +318,103 @@ rconsoleprint('this is red')
 | Light Magenta	   | @@LIGHT_MAGENTA@@   |
 | Yellow           | @@YELLOW@@          |
 | White	           | @@WHITE@@           |
-    
+
+
+### Console Info
+
+`<void> rconsoleinfo(<string> message)`
+
+Prints `message` into the console, with a info text before it.
+
+### Console Warn
+
+`<void> rconsolewarn(<string> message)`
+
+Prints `message` into the console, with a warning text before it.
+
+### Console Error
+
+`<void> rconsoleerr(<string> message)`
+
+Prints `message` into the console, with a error text before it.
+
+### Console Clear
+
+`<void> rconsoleclear(<void>)`
+
+Clears the console.
+
+### Console Name
+
+`<void> rconsolename(<string> title)`
+
+Sets the currently allocated console title to `title`.
+
+### Console Input
+
+`<string> rconsoleinput(<void>)`
+
+Yields until the user inputs information into their console. Returns the input they put in.
+
+# Filesystem Functions
+
+
+### Read File
+
+`<string> readfile(<string> path)`
+
+Reads the contents of the file located at `path` and returns it. If the file does not exist, it errors.
+
+### Write File
+
+`<void> writefile(<string> path, <string> contents)`
+
+Writes `contents` to the supplied `path`. If the file does not exist, it errors.
+
+### Append File
+
+`<void> appendfile(<string> path, <string> content)`
+
+Appends `content` to the file contents at `path`. If the file does not exist, it errors.
+
+### Load File
+
+`<union<function, nil>, <string?>> loadfile(<string> path)`
+
+Loads in the contents of a file as a chunk and returns it if compilation is successful. Otherwise, if an error has occurred during compilation, `nil` followed by the error message will be returned.
+
+### List Files
+
+`<table> listfiles(<string> folder)`
+
+Returns a table of files in `folder`.
+
+### Is File
+
+`<bool> isfile(<string> path)`
+
+Returns if `path` is a file or not.
+
+### Is Folder
+
+`<bool> isfolder(<string> path)`
+
+Returns if `path` is a folder or not.
+
+### Make Folder
+
+`<void> makefolder(<string> path)`
+
+Creates a new folder at `path`.
+
+### Delete Folder
+
+`<void> delfolder(<string> path)`
+
+Deletes the folder in the supplied path, if no folder exists, it errors.
+
+### Delete File
+
+`<void> delfile(<string> path)`
+
+Deletes the file in the supplied `path`, if no file exists, it errors.
