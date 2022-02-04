@@ -1,6 +1,5 @@
 # Comet Documentation
-Unofficial documentation for the Roblox exploit Comet
 
-### Documentation is written in the format of Synapse X docs, I will rewrite with a complete new format, and unique descriptions at some point.
+####Unofficial documentation for the Roblox exploit Comet
 
-### Undocumented functions can be found in OtherFunctions.md
+#### Documentation is written in the format of Synapse X docs, I will rewrite with a complete new format, and unique descriptions at some point.
