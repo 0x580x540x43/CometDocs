@@ -412,6 +412,10 @@ Deletes the folder in the supplied path, if no folder exists, it errors.
 `<void> delfile(<string> path)`
 
 Deletes the file in the supplied `path`, if no file exists, it errors.
+    
+# Drawing Functions
+
+Coming Soon.
 
 # Miscellaneous Functions
 
@@ -505,6 +509,12 @@ end)
 `<bool> COMET_LOADED(<void>)`
 
 Returns a bool indicating whether or not Comet is loaded.
+    
+### identifyexecutor
+
+`<string> identifyexecutor()`
+
+Returns a string indicating what the Exploit is (in this case, Comet)
 
 ## Credits
 
