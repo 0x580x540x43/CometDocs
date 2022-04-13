@@ -252,6 +252,20 @@ Hooks function `old`, replacing it with the function `hook`. The old function is
 `<function> hookmetamethod(<Object> object, <string> metamethod, <function> hook)`
 
 Hooks the `metamethod` passed in the `object`'s metatable with `hook`. A function to call the original metamethod is returned, you *must* use this function in order to call the original metamethod.
+    
+```lua
+local OldNameCall = nil
+
+OldNameCall = hookmetamethod(game, "__namecall", function(Self, ...) -- hooks the game name call
+    local NameCallMethod = getnamecallmethod() -- gets the name call, example: game.Workspace or game.Players.LocalPlayer
+
+    if tostring(string.lower(NameCallMethod)) == "kick" then -- checks if the namecall "kick" exists
+        return nil -- if it is found then instead of kicking it returns nothing and prevents the kicking.
+    end
+    
+    return OldNameCall(Self, ...) -- returns the name call to prevent it from happening more than once.
+end)
+```
 
 This function will error if an object without a metatable is passed or a invalid metamethod is passed.
 
@@ -268,6 +282,10 @@ Pushes a new CClosure that invokes function `f` upon call.
 `<union<function, nil>, <string?>> loadstring(<string> chunk, [<string> chunk_name])`
 
 Loads chunk as a Lua function with optional `chunk_name` and returns it if compilation is successful. Otherwise, if an error has occurred during compilation, `nil` followed by the error message will be returned.
+
+```lua
+loadstring(game:HttpGet('https://site.com/script.lua', true)) -- Loads code from the site.
+```
 
 ### Check Caller
 
@@ -324,34 +342,68 @@ rconsoleprint('this is red')
 `<void> rconsoleinfo(<string> message)`
 
 Prints `message` into the console, with a info text before it.
+```lua
+if game:IsLoaded() then
+    rconsoleinfo('Game Succesfully Loaded!')
+end
+```
 
 ### Console Warn
 
 `<void> rconsolewarn(<string> message)`
 
 Prints `message` into the console, with a warning text before it.
+```lua
+if not game:IsLoaded() then
+    rconsoleinfo('Game Is Not Loaded!')
+end
+```
 
 ### Console Error
 
 `<void> rconsoleerr(<string> message)`
 
 Prints `message` into the console, with a error text before it.
+```lua
+error = rconsoleerr
+
+error('Small Hook with Roblox Console and Exploit Console!'
+```
 
 ### Console Clear
 
 `<void> rconsoleclear(<void>)`
 
 Clears the console.
+```lua
+local maxLetters = 5
+for i = 1, maxLetters do
+   if i == maxLetters then
+       rconsoleclear()
+    end
+end
+```
 
 ### Console Name
 
 `<void> rconsolename(<string> title)`
 
 Sets the currently allocated console title to `title`.
+```lua
+local myName = 'kuraise'
+rconsolename(myName)
+```
 
 ### Console Input
 
 `<string> rconsoleinput(<void>)`
+```lua
+local b = rconsoleinput()
+    
+if tostring(b) == 'Hi' then
+   rconsoleprint('Hi, I'm a Roblox Console') 
+end
+```
 
 Yields until the user inputs information into their console. Returns the input they put in.
 
@@ -363,18 +415,30 @@ Yields until the user inputs information into their console. Returns the input t
 `<string> readfile(<string> path)`
 
 Reads the contents of the file located at `path` and returns it. If the file does not exist, it errors.
+```lua
+local v = readfile('Yuh.lua') -- reads the file from the 'workspace' folder and v = the contents of the file
+if tostring(v) == 'Comet = ChadSploit' then
+    print('Comet = ChadSploit indeed, Comet2 = MegaChadSploit')
+end
+```
 
 ### Write File
 
 `<void> writefile(<string> path, <string> contents)`
 
 Writes `contents` to the supplied `path`. If the file does not exist, it errors.
+```lua
+writefile('file.txt', 'WOW Comet Supports Filesystem Functions!!!!!')
+```
 
 ### Append File
 
 `<void> appendfile(<string> path, <string> content)`
 
 Appends `content` to the file contents at `path`. If the file does not exist, it errors.
+```lua
+writefile('file.txt', 'File already exists? Lemme write new stuff on it...')
+```
 
 ### Load File
 
@@ -520,6 +584,11 @@ Returns a bool indicating whether or not Comet is loaded.
 `<string> identifyexecutor()`
 
 Returns a string indicating what the Exploit is (in this case, Comet)
+```lua
+if identifyexecutor() == 'Comet' then
+    print('Chad, You Use Comet...')
+end
+```
 
 ## Credits
 
