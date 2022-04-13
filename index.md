@@ -181,6 +181,11 @@ Returns `t's` read-only condition.
 
 Returns if the main window is in focus. This must return true for any other mouse/keyboard function to work.
 
+```lua
+repeat wait() until iswindowactive()
+print('Window Is Active!')
+```
+
 ### Keyboard Functions
 
 `<void> keypress(<uint> keycode)`
