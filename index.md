@@ -367,7 +367,7 @@ Prints `message` into the console, with a error text before it.
 ```lua
 error = rconsoleerr
 
-error('Small Hook with Roblox Console and Exploit Console!'
+error('Small Hook with Roblox Console and Exploit Console!')
 ```
 
 ### Console Clear
